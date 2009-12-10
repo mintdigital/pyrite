@@ -8,6 +8,8 @@ namespace :selenium do
     rc.wait_until_up_and_running = true
     rc.log_to = 'log/selenium_rc.log'
     rc.additional_args << "-singleWindow"
+    rc.jar_file = File.join(File.dirname(__FILE__),'..',
+      'vendor','selenium-rc','selenium-server-1.0.2-SNAPSHOT-standalone.jar')
   end
 
   Selenium::Rake::RemoteControlStopTask.new(:stop) do |rc|
@@ -17,4 +19,3 @@ namespace :selenium do
   end
 
 end
-
