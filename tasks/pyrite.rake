@@ -10,13 +10,22 @@ namespace :test do
     desc "Startup Selenium RC and the server for browser testing"
     task :startup do
       Rake::Task['selenium:start'].invoke
-      `script/server thin -e selenium -p 2222 -d`
+      puts `script/server thin -e selenium -p 2222 -d`
     end
 
     desc "Shutdown Selenium RC and the server for browser testing"
     task :shutdown do
-      Rake::Task['selenium:stop'].invoke
-      Process.kill('QUIT', File.read('tmp/pids/server.pid'))
+      begin
+        Rake::Task['selenium:stop'].invoke
+      rescue Errno::ECONNREFUSED => boom
+        puts "*** Could not connect to Selenium RC. Assuming it is not running."
+      end
+      if File.exist?(pidfile = 'tmp/pids/server.pid')
+        puts "Stopping server process #{pid = File.read(pidfile)}"
+        Process.kill 'QUIT', Integer(pid)
+      else
+        puts "*** Could not read pid file for server. Assuming it is not running."
+      end
     end
 
     BROWSERS = {
