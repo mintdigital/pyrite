@@ -37,7 +37,7 @@ namespace :test do
     }
     task :grid do
       errors = BROWSERS.keys.collect do |key|
-        task = "browser:#{key}"
+        task = "test:grid:#{key}"
         begin
           Rake::Task[task].invoke
           nil
