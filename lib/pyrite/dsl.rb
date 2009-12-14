@@ -34,13 +34,11 @@ module Pyrite
     # Follow a link
     def follow(text)
       browser.click("link=#{text}")
-      wait_for :page_load
     end
 
     # Press a button
     def press(text)
       browser.click("//input[@type='submit'][@value='#{text}']")
-      wait_for :page_load
     end
 
     # Check a chek box or toggle a radio button 
