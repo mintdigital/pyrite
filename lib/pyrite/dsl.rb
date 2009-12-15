@@ -72,7 +72,7 @@ module Pyrite
     def inside_iframe(frame)
       browser.select_frame(frame)
       yield
-      browser.select_frame(relative=parent)
+      browser.select_frame("relative=parent")
     end
     
     # Use this to consume JS alerts
