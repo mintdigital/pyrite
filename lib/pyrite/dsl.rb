@@ -66,7 +66,7 @@ module Pyrite
     end
      
     def wait_for_frame(frame) 
-      browser.wait_for_frame_to_load(frame)
+      browser.wait_for_frame_to_load(frame, 5000)
     end
 
     def inside_iframe(frame)
