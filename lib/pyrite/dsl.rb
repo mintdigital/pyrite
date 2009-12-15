@@ -64,7 +64,17 @@ module Pyrite
         browser.wait_for_element(element)
       end
     end
+     
+    def wait_for_frame(frame) 
+      browser.wait_for_frame_to_load(frame)
+    end
 
+    def inside_iframe(frame)
+      browser.select_frame(frame)
+      yield
+      browser.select_frame(relative=parent)
+    end
+    
     # Use this to consume JS alerts
     def get_confirmation
       browser.get_confirmation
