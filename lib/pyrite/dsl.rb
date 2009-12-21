@@ -70,11 +70,13 @@ module Pyrite
     end
 
     def inside_iframe(frame)
+      wait_for frame
       browser.select_frame(frame)
+      wait_for_frame frame
       yield
       browser.select_frame("relative=parent")
     end
-    
+
     # Use this to consume JS alerts
     def get_confirmation
       browser.get_confirmation
