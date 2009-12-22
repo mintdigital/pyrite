@@ -29,6 +29,7 @@ namespace :test do
     end
 
     BROWSERS = {
+      :safari_osx    => 'Safari on OS X',
       :firefox_osx   => 'Firefox on OS X',
       :ie_xp         => 'IE on XP',
       :ie_vista      => 'IE on Vista',
