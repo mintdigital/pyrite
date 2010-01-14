@@ -87,6 +87,7 @@ module Pyrite
     def show_me
       image = "#{Rails.root.join('tmp')}/pyrite-#{Time.now.to_i}.png"
       browser.capture_entire_page_screenshot(image, '')
+      puts `open #{image}
     end
   end
 end
