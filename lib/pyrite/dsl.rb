@@ -82,6 +82,9 @@ module Pyrite
       browser.get_confirmation
     end
 
+    def drag_and_drop(opts={})
+      browser.drag_and_drop_to_object("css=#{opts[:from]}", "css=#{opts[:to]}")
+    end
 
     # Capture the page and try to open it
     def show_me
