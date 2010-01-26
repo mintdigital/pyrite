@@ -31,24 +31,24 @@ module Pyrite
       wait_for :page_load
     end
 
-    # Follow a link
+    # Follow a link based on its text
     def follow(text)
       browser.click("link=#{text}")
     end
 
-    # Press a button
+    # Press a button based on its text
     def press(text)
       browser.click("//input[@type='submit'][@value='#{text}']")
     end
 
-    # Check a chek box or toggle a radio button 
+    # Check a chek box or toggle a radio button
     def check (locator)
-      browser.check(locator)
+      browser.check("css=#{locator}")
     end
 
     # Click anything else
     def click(locator)
-      browser.click(locator)
+      browser.click("css=#{locator}")
     end
 
     # Pick an option from a select element
@@ -61,14 +61,20 @@ module Pyrite
       if element == :page_load
         browser.wait_for_page_to_load
       else
-        browser.wait_for_element(element)
+        browser.wait_for_element("css=#{element}")
       end
     end
-     
+
+    # Wait for a frame with a give ID to finish loading
     def wait_for_frame(frame) 
       browser.wait_for_frame_to_load(frame, 5000)
     end
 
+    # Excecute commands within an iframe, then switch back to the parent frame
+    # i.e.
+    # inside_frame(iframe) do
+    #   click "Submit"
+    # end
     def inside_iframe(frame)
       wait_for frame
       browser.select_frame(frame)
@@ -78,19 +84,28 @@ module Pyrite
     end
 
     # Use this to consume JS alerts
+    # i.e.
+    # follow 'delete'
+    # get_confirmation
+    # !assert_element "h2:contains('user1')"
     def get_confirmation
       browser.get_confirmation
     end
 
+    # The ID of the object to drag :from and the object to drag :to
+    # Can be a little tricky so try both ways round if you can
     def drag_and_drop(opts={})
       browser.drag_and_drop_to_object("css=#{opts[:from]}", "css=#{opts[:to]}")
     end
 
     # Capture the page and try to open it
+    # (probably only works on os x)
     def show_me
       image = "#{Rails.root.join('tmp')}/pyrite-#{Time.now.to_i}.png"
       browser.capture_entire_page_screenshot(image, '')
       puts `open #{image}`
     end
+
   end
+
 end
