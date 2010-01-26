@@ -1,20 +1,19 @@
-namespace :test do
-  Rake::TestTask.new(:browser) do |t|
+namespace :pyrite do
+  Rake::TestTask.new(:run) do |t|
     t.libs << "test"
-    t.pattern = 'test/browser/**/*_test.rb'
+    t.pattern = 'pyrite/tests/**/*_test.rb'
     t.verbose = true
   end
-  Rake::Task['test:browser'].comment = "Full-stack in-browser tests with pyrite"
+  Rake::Task['pyrite:run'].comment = "Full-stack in-browser tests with pyrite"
 
-  namespace :browser do
     desc "Startup Selenium RC and the server for browser testing"
-    task :startup do
+    task :start do
       Rake::Task['selenium:start'].invoke
-      puts `script/server thin -e selenium -p 2222 -d`
+      puts `thin start -e selenium -p 2222 -d`
     end
 
     desc "Shutdown Selenium RC and the server for browser testing"
-    task :shutdown do
+    task :stop do
       begin
         Rake::Task['selenium:stop'].invoke
       rescue Errno::ECONNREFUSED => boom
@@ -27,6 +26,8 @@ namespace :test do
         puts "*** Could not read pid file for server. Assuming it is not running."
       end
     end
+
+namespace :pyrite do
 
     BROWSERS = {
       :safari_osx    => 'Safari on OS X',
