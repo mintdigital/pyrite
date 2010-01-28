@@ -43,12 +43,12 @@ module Pyrite
 
     # Check a chek box or toggle a radio button
     def check (locator)
-      browser.check("css=#{locator}")
+      browser.check(locator)
     end
 
     # Click anything else
     def click(locator)
-      browser.click("css=#{locator}")
+      browser.click(locator)
     end
 
     # Pick an option from a select element
