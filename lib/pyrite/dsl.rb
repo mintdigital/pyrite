@@ -61,7 +61,7 @@ module Pyrite
       if element == :page_load
         browser.wait_for_page_to_load
       else
-        browser.wait_for_element("css=#{element}")
+        browser.wait_for_element(element)
       end
     end
 
