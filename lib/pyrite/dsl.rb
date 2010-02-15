@@ -31,17 +31,17 @@ module Pyrite
       wait_for :page_load
     end
 
-    # Follow a link
+    # Follow a link based on its text
     def follow(text)
       browser.click("link=#{text}")
     end
 
-    # Press a button
+    # Press a button based on its text
     def press(text)
       browser.click("//input[@type='submit'][@value='#{text}']")
     end
 
-    # Check a chek box or toggle a radio button 
+    # Check a chek box or toggle a radio button
     def check (locator)
       browser.check(locator)
     end
@@ -64,11 +64,17 @@ module Pyrite
         browser.wait_for_element(element)
       end
     end
-     
+
+    # Wait for a frame with a give ID to finish loading
     def wait_for_frame(frame) 
       browser.wait_for_frame_to_load(frame, 5000)
     end
 
+    # Excecute commands within an iframe, then switch back to the parent frame
+    # i.e.
+    # inside_frame(iframe) do
+    #   click "Submit"
+    # end
     def inside_iframe(frame)
       wait_for frame
       browser.select_frame(frame)
@@ -78,10 +84,15 @@ module Pyrite
     end
 
     # Use this to consume JS alerts
+    # i.e.
+    # follow 'delete'
+    # get_confirmation
+    # !assert_element "h2:contains('user1')"
     def get_confirmation
       browser.get_confirmation
     end
 
+<<<<<<< HEAD
     # drag an css selector to the center pixel of another, e.g. 
     # `drag_and_drop(:from => "li#element_#{my_oject.id}", :to => "div#trash")
     # ProTip: if you have a list of elements you wish to re-order, drag the top element down.
@@ -90,10 +101,13 @@ module Pyrite
     end
 
     # Capture the page and try to open it
+    # (probably only works on os x)
     def show_me
       image = "#{Rails.root.join('tmp')}/pyrite-#{Time.now.to_i}.png"
       browser.capture_entire_page_screenshot(image, '')
       puts `open #{image}`
     end
+
   end
+
 end

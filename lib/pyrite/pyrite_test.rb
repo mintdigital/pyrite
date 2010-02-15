@@ -1,5 +1,5 @@
 module Pyrite
-  class BrowserTest < ActionController::IntegrationTest
+  class PyriteTest < ActionController::IntegrationTest
     include Dsl
     include Assertions
     include Helpers

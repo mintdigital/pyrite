@@ -22,4 +22,4 @@ module Pyrite
 
 end
 
-require 'pyrite/browser_test'
+require 'pyrite/pyrite_test'

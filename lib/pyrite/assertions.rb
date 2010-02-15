@@ -6,6 +6,11 @@ module Pyrite
       assert browser.text?(text), msg || "Text '#{text}' not found on page"
     end
 
+    # Assert some text does not appear somewhere on the page
+    def assert_no_text(text, msg=nil)
+      assert !browser.text?(text), msg || "Text '#{text}' not found on page"
+    end
+
     # Assert an element appears on the page via CSS selector
     def assert_element(selector, msg=nil)
       assert browser.element?("css=#{selector}"),
