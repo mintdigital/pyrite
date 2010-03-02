@@ -92,7 +92,6 @@ module Pyrite
       browser.get_confirmation
     end
 
-<<<<<<< HEAD
     # drag an css selector to the center pixel of another, e.g. 
     # `drag_and_drop(:from => "li#element_#{my_oject.id}", :to => "div#trash")
     # ProTip: if you have a list of elements you wish to re-order, drag the top element down.
