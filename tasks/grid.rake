@@ -13,6 +13,7 @@ namespace :grid do
     desc "Run Pyrite browser tests with #{browser}"
     task key do
       ENV['BROWSER'] = browser
+      ENV['SERVER_URL'] = 'http://192.168.200.141'
       Rake::Task['pyrite:run'].invoke
     end
   end
