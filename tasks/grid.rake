@@ -6,7 +6,7 @@ namespace :grid do
     :firefox_xp    => 'Firefox on XP'
     :ie6           => 'IE6',
     :ie7           => 'IE7',
-    :ie8           => 'IE8',
+    :ie8           => 'IE8'
   }
 
   BROWSERS.each do |key, browser|
