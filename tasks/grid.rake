@@ -3,10 +3,10 @@ namespace :grid do
   BROWSERS = {
     :safari_osx    => 'Safari on OS X',
     :firefox_osx   => 'Firefox on OS X',
-    :ie_xp         => 'IE on XP',
-    :ie_vista      => 'IE on Vista',
-    :firefox_vista => 'Firefox on Vista',
     :firefox_xp    => 'Firefox on XP'
+    :ie6           => 'IE6',
+    :ie7           => 'IE7',
+    :ie8           => 'IE8',
   }
 
   BROWSERS.each do |key, browser|
