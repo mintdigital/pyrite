@@ -7,6 +7,10 @@ module Pyrite
   # The port on which the test server will be booted
   mattr_accessor :server_port
   @@server_port = 2222
+  
+  # The ip address the RC is running on
+  mattr_accessor :rc_host
+  @@rc_host = ENV['RC_HOST'] || '0.0.0.0'
 
   # The url on which the test server will be booted
   mattr_accessor :sever_url

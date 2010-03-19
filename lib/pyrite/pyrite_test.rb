@@ -8,7 +8,7 @@ module Pyrite
 
     def browser
       $browser ||= Selenium::Client::Driver.new(
-        :host => "localhost",
+        :host => Pyrite.rc_host,
         :port => 4444,
         :browser => Pyrite.browser,
         :url => "#{Pyrite.sever_url}:#{Pyrite.server_port}",
