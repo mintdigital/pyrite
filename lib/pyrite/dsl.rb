@@ -38,17 +38,21 @@ module Pyrite
 
     # Press a button based on its text
     def press(text)
-      browser.click("//input[@type='submit'][@value='#{text}']")
+      browser.click("css=input[type=submit],[value='#{text}']")      
     end
 
     # Check a chek box or toggle a radio button
-    def check (locator)
+    def check(locator)
       browser.check(locator)
     end
 
     # Click anything else
     def click(locator)
       browser.click(locator)
+    end
+    
+    def attach(field, file)
+      browser.attach(field, "http://test.rodreegez.com/#{file}")
     end
 
     # Pick an option from a select element
