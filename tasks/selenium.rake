@@ -1,5 +1,6 @@
 begin
   require 'selenium/rake/tasks'
+  require 'selenium_remote_control'
 rescue LoadError => boom
 else
 
@@ -11,8 +12,7 @@ else
       rc.wait_until_up_and_running = true
       rc.log_to = 'log/selenium_rc.log'
       rc.additional_args << "-singleWindow"
-      rc.jar_file = File.join(File.dirname(__FILE__),'..',
-        'vendor','selenium-rc','selenium-server-1.0.2-SNAPSHOT-standalone.jar')
+      rc.jar_file = SeleniumRC.jar_file
     end
 
     Selenium::Rake::RemoteControlStopTask.new(:stop) do |rc|
