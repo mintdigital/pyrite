@@ -1,12 +1,12 @@
 namespace :grid do
 
   BROWSERS  = {
-    :ie8    => {:rc_host => '192.168.200.142', :browser => '*iexplore'},
-    :ie7    => {:rc_host => '192.168.200.145', :browser => '*iexplore'},
-    :ie6    => {:rc_host => '192.168.200.163', :browser => '*iexplore'},
+    :ie8    => {:rc_host => '192.168.200.142', :browser => '*iexploreproxy'},
+    :ie7    => {:rc_host => '192.168.200.145', :browser => '*iexploreproxy'},
+    :ie6    => {:rc_host => '192.168.200.163', :browser => '*iexploreproxy'},
     :ff_xp  => {:rc_host => '192.168.200.163', :browser => '*chrome'},
     :ff_osx => {:rc_host => '192.168.200.117', :browser => '*chrome'},
-    :sf_osx => {:rc_host => '192.168.200.117', :browser => '*chrome'}
+    :sf_osx => {:rc_host => '192.168.200.117', :browser => '*safari'}
   }
 
   BROWSERS.each do |key, opts|
