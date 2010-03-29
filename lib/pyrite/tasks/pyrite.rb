@@ -8,9 +8,8 @@ namespace :pyrite do
   Rake::Task['pyrite:run'].comment = "Full-stack in-browser tests with pyrite"
 
   desc "Startup Selenium RC and the server for browser testing"
-  task :start do
-    Rake::Task['selenium:start'].invoke
-    puts `thin start -e selenium -p 2222 -d`
+  task :start => 'selenium:start' do
+    puts `thin start -e pyrite -p 2222 -d`
   end
 
   desc "Shutdown Selenium RC and the server for browser testing"
@@ -20,7 +19,7 @@ namespace :pyrite do
     rescue Errno::ECONNREFUSED => boom
       puts "*** Could not connect to Selenium RC. Assuming it is not running."
     end
-    if File.exist?(pidfile = 'tmp/pids/server.pid')
+    if File.exist?(pidfile = Rails.root+'tmp/pids/server.pid')
       puts "Stopping server process #{pid = File.read(pidfile)}"
       Process.kill 'QUIT', Integer(pid)
     else
