@@ -1,9 +1,10 @@
-namespace :pyrite => :environment do
+namespace :pyrite do
   Rake::TestTask.new(:run) do |t|
-    t.libs << "pyrite"
-    t.pattern = 'pyrite/tests/**/*_test.rb'
+    t.libs << "test"
+    t.pattern = 'test/pyrite/**/*_test.rb'
     t.verbose = true
   end
+  task :run # stub so that below will work
   Rake::Task['pyrite:run'].comment = "Full-stack in-browser tests with pyrite"
 
   desc "Startup Selenium RC and the server for browser testing"
