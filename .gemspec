@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
     "lib/pyrite/helpers.rb",
     "lib/pyrite/pyrite_test.rb",
     "lib/pyrite/tasks.rb",
-    "lib/pyrite/tasks/grid.rb",
     "lib/pyrite/tasks/pyrite.rb",
     "lib/pyrite/tasks/selenium.rb",
     "lib/pyrite.rb",
