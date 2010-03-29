@@ -1,3 +1,7 @@
+require 'pyrite/dsl'
+require 'pyrite/assertions'
+require 'pyrite/helpers'
+
 module Pyrite
   class PyriteTest < ActionController::IntegrationTest
     include Dsl
