@@ -25,8 +25,6 @@ namespace :grid do
       if File.exist?(pidfile)
         puts "Stopping server process #{pid = File.read(pidfile)}"
         Process.kill 'QUIT', Integer(pid)
-      else
-        puts "Lets rock!"
       end
       %x{thin start -p 2222 -e selenium -d} 
     end
