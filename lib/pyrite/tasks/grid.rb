@@ -26,7 +26,7 @@ namespace :grid do
         puts "Stopping server process #{pid = File.read(pidfile)}"
         Process.kill 'QUIT', Integer(pid)
       end
-      %x{thin start -p 2222 -e selenium -d} 
+      %x{./script/server -p 2222 -e selenium -d} 
     end
 
     desc "Kill server"
