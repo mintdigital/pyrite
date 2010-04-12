@@ -48,7 +48,7 @@ module Pyrite
 
     # Click anything else
     def click(locator)
-      browser.click(locator)
+      browser.click("css=#{locator}")
     end
 
     # Pick an option from a select element
