@@ -50,10 +50,6 @@ module Pyrite
     def click(locator)
       browser.click(locator)
     end
-    
-    def attach(field, file)
-      browser.attach(field, "http://test.rodreegez.com/#{file}")
-    end
 
     # Pick an option from a select element
     def select(element, option)
@@ -76,9 +72,9 @@ module Pyrite
 
     # Excecute commands within an iframe, then switch back to the parent frame
     # i.e.
-    # inside_frame(iframe) do
-    #   click "Submit"
-    # end
+    #    inside_frame(iframe) do
+    #      click "Submit"
+    #    end
     def inside_iframe(frame)
       wait_for frame
       browser.select_frame(frame)
@@ -89,9 +85,9 @@ module Pyrite
 
     # Use this to consume JS alerts
     # i.e.
-    # follow 'delete'
-    # get_confirmation
-    # !assert_element "h2:contains('user1')"
+    #    follow 'delete'
+    #    get_confirmation
+    #    !assert_element "h2:contains('user1')"
     def get_confirmation
       browser.get_confirmation
     end
