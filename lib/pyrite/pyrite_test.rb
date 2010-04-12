@@ -2,7 +2,7 @@ require 'pyrite/dsl'
 require 'pyrite/assertions'
 require 'pyrite/helpers'
 
-module Pyrite
+module Pyrite 
   class PyriteTest < ActionController::IntegrationTest
     include Dsl
     include Assertions
@@ -10,7 +10,7 @@ module Pyrite
 
     self.use_transactional_fixtures = false
 
-    def browser
+    def browser #:nodoc: 
       $browser ||= Selenium::Client::Driver.new(
         :host => Pyrite.rc_host,
         :port => 4444,
@@ -20,13 +20,13 @@ module Pyrite
       )
     end
 
-    def setup
+    def setup #:nodoc:
       DatabaseCleaner.clean
       browser.start_new_browser_session
       super
     end
 
-    def teardown
+    def teardown #:nodoc:
       super
       browser.close_current_browser_session
     end
