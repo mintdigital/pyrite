@@ -100,11 +100,20 @@ module Pyrite
     end
 
     # Capture the page and try to open it
-    # (probably only works on os x)
+    # (probably only works on OS X)
     def show_me
       image = "#{Rails.root.join('tmp')}/pyrite-#{Time.now.to_i}.png"
       browser.capture_entire_page_screenshot(image, '')
       puts `open #{image}`
+    end
+    
+    # Write the HTML of a page to a file and open it.
+    # (probably only works on OS X)
+    def code_me
+      html = browser.get_html_source
+      filename = "#{Rails.root.join('tmp')}/pyrite-#{Time.now.to_i}.html"
+      code = File.open(filename, 'w') { |f| f.write(html) }
+      puts `open #{code}`
     end
 
   end
