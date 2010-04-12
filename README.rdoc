@@ -1,0 +1,48 @@
+= Pyrite - Easy Peasy Browser Testing
+
+- http://mintdigital.github.com/pyrite
+- http://github.com/mintdigital/pyrite
+
+== Description
+
+Pyrite is a lightweight DSL around the Selenium browser testing framework.
+
+We found Cucumber to be awesome, but no one was reading the features. We found
+Webrat to be fantastic, but way too complex for what we wanted. So, we made
+Pyrite - a few selenium-client methods wrapped up in a readable way.
+
+== Example
+
+  require 'pyrite_helper'
+  class BasicTest < Pyrite::PyriteTest
+    test "it works" do
+      visit root_path
+      follow "next page"
+      wait_for :page_load
+      assert_text "some text you should see"
+    end
+  end
+
+== Dependencies
+
+Pyrite has no dependencies that you should have to install manually. Gem
+installation should pull in the necessary selenium libraries.
+
+You will need an operating system and browser capable of running Selenium
+
+== Install
+
+We recommend you use {bundler}[http://gembundler.com]:
+
+  gem 'pyrite', '0.5.0', :require => false
+
+Installing as a Rails plugin should also work:
+
+  script/plugin install git://github.com/mintdigital/pyrite.git
+
+== License
+
+Copyright (c) 2010 Mint Digital Ltd.
+
+Released under the terms of the MIT License.
+See the MIT-LICENSE file in this directory.
