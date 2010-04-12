@@ -93,7 +93,7 @@ module Pyrite
     end
 
     # drag an css selector to the center pixel of another, e.g. 
-    # `drag_and_drop(:from => "li#element_#{my_oject.id}", :to => "div#trash")
+    #    `drag_and_drop(:from => "li#element_#{my_oject.id}", :to => "div#trash")
     # ProTip: if you have a list of elements you wish to re-order, drag the top element down.
     def drag_and_drop(opts={})
       browser.drag_and_drop_to_object("css=#{opts[:from]}", "css=#{opts[:to]}")
