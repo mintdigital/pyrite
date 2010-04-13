@@ -59,9 +59,9 @@ module Pyrite
     # Wait for a specific element or the page to load
     def wait_for(element)
       if element == :page_load
-        browser.wait_for_page_to_load
+        browser.wait_for_page_to_load :page
       else
-        browser.wait_for_element(element)
+        browser.wait_for :element => "#{element}"
       end
     end
 
