@@ -9,26 +9,32 @@
 	
 	<style type="text/css">
 		body {
-  		margin-top: 1.0em;
-  		background-color: #76ab01;
-		  font-family: "Helvetica,Arial,FreeSans";
-  		color: #ffffff;
+  		background-color: #fff;
+		  font-family: "Gill Sans",Arial,tahoma,sans-serif;
+  		color: #565656;
+  		line-height:1.07;
+  		border-top:4px solid #106275;
+  		margin:0;
     }
     #container {
       margin: 0 auto;
       width: 700px;
     }
-		h1 { font-size: 3.8em; color: #8954fe; margin-bottom: 3px; }
+		h1 { font-size: 3.8em; color: #565656; margin-bottom: 3px; font-weight:normal; }
 		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #8954fe; }
-    h3 { text-align: center; color: #8954fe; }
-    a { color: #8954fe; }
+		h1 a { text-decoration: none; color:#565656; }
+		h1 a:hover { text-decoration:none; }
+		h2 { font-size: 2em; color: #565656; font-weight:normal; }
+    h3 { color: #565656; font-weight:normal; }
+    a { color: #106275; text-decoration:none; }
+    a:hover { text-decoration:underline;}
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
 		pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+    .footer { text-align:center; padding:30px 0; font-style: italic; }
+    .mintdigital { color:#565656; text-transform:uppercase;}
+    .mintdigital span { color:#106275; }
 	</style>
 	
 </head>
@@ -45,44 +51,18 @@
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
     </div>
 
-    <h1><a href="http://github.com/mintdigital/pyrite">pyrite</a>
-      <span class="small">by <a href="http://github.com/mintdigital">mintdigital</a></span></h1>
+    <h1>
+      <a href="http://github.com/mintdigital/pyrite">pyrite</a> <span class="small">by <a href="http://github.com/mintdigital" class="mintdigital"><span>Mint</span>Digital</a></span>
+    </h1>
 
     <div class="description">
-      Easy peasy in-browser testing with Selenium
+      <p>Easy peasy in-browser testing with Selenium</p>
     </div>
 
     <h2>Install</h2>
-<p>Using bundler:
-
-    gem 'pyrite', :require => false</p>
-<h2>License</h2>
-<p>The MIT License
-
-Copyright (c) 2010 Mint Digital Ltd.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-<h2>Authors</h2>
-<p>Adam Rogers (adam@mintdigital.com)<br/>Dean Strelau (dean@mintdigital.com)</p>
-<h2>Contact</h2>
-<p>Adam Rogers (adam@mintdigital.com)<br/>      </p>
-
+    <p>Using bundler:
+      <pre>gem 'pyrite', :require => false</pre>
+    </p>
 
     <h2>Download</h2>
     <p>
@@ -94,6 +74,35 @@ THE SOFTWARE.</p>
       by running:
       <pre>$ git clone git://github.com/mintdigital/pyrite</pre>
     </p>
+
+    <h2>Authors</h2>
+    <p>Adam Rogers (adam@mintdigital.com)</p>
+    <p>Dean Strelau (dean@mintdigital.com)</p>
+    <h2>Contact</h2>
+    <p>Adam Rogers (adam@mintdigital.com)</p>
+    
+    <h2>License</h2>
+    <h3>The MIT License</h3>
+
+    <p>Copyright (c) 2010 Mint Digital Ltd.</p>
+
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:</p>
+
+    <p>The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.</p>
+
+    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.</p>
 
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/mintdigital/pyrite">mintdigital/pyrite</a>
