@@ -44,13 +44,6 @@
 
   <div id="container">
 
-    <div class="download">
-      <a href="http://github.com/mintdigital/pyrite/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/mintdigital/pyrite/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
     <h1>
       <a href="http://github.com/mintdigital/pyrite">pyrite</a> <span class="small">by <a href="http://github.com/mintdigital" class="mintdigital"><span>Mint</span>Digital</a></span>
     </h1>
@@ -59,50 +52,39 @@
       <p>Easy peasy in-browser testing with Selenium</p>
     </div>
 
+		<h2>Description</h2>
+
+		<p>Pyrite is a lightweight DSL around the Selenium browser testing framework.</p>
+
+		<p>We found Cucumber to be awesome, but no one was reading the features. We found Webrat to be fantastic, but way too complex for what we wanted. So, we made Pyrite - a few selenium-client methods wrapped up in a readable way.</p>
+
     <h2>Install</h2>
     <p>Using bundler:
       <pre>gem 'pyrite', :require => false</pre>
+			Installing as a Rails plugin should also work:
+			  <pre>script/plugin install git://github.com/mintdigital/pyrite.git</pre>
     </p>
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/mintdigital/pyrite/zipball/master">zip</a> or
-      <a href="http://github.com/mintdigital/pyrite/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/mintdigital/pyrite</pre>
-    </p>
+		<h2>Example</h2>
+		<p>Pyrite tests are just like regular Rails tests, but with a nice DSL:</p>
+<pre>
+require 'pyrite_helper'
 
-    <h2>Authors</h2>
-    <p>Adam Rogers (adam@mintdigital.com)</p>
-    <p>Dean Strelau (dean@mintdigital.com)</p>
-    <h2>Contact</h2>
-    <p>Adam Rogers (adam@mintdigital.com)</p>
-    
-    <h2>License</h2>
-    <h3>The MIT License</h3>
+class BasicTest < Pyrite::PyriteTest
+  test "it works" do
+    visit root_path
+    follow "next page"
+    wait_for :page_load
+    assert_text "some text you should see"
+  end
+end
+</pre>
 
-    <p>Copyright (c) 2010 Mint Digital Ltd.</p>
+			<h2>License</h2>
 
-    <p>Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:</p>
+			<p>Copyright © 2010 Mint Digital Ltd.</p>
 
-    <p>The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.</p>
-
-    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.</p>
+			<p>Released under the terms of the MIT License. See the <a href="https://github.com/mintdigital/pyrite/blob/master/MIT-LICENSE">MIT-LICENSE</a> file</p>		
 
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/mintdigital/pyrite">mintdigital/pyrite</a>
