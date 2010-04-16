@@ -16,7 +16,7 @@ module Pyrite
 
   # The url on which the test server will be booted
   mattr_accessor :sever_url
-  @@sever_url = ENV['SERVER_URL'] || 'http://localhost'
+  @@sever_url = ENV['SERVER_URL'] || 'http://0.0.0.0'
 
   # The browser that selenium will drive
   mattr_accessor :browser
