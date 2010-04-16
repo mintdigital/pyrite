@@ -67,7 +67,7 @@ module Pyrite
 
     # Wait for a frame with a give ID to finish loading
     def wait_for_frame(frame)
-      browser.wait_for_frame_to_load(frame, 5000)
+      browser.wait_for_frame_to_load(frame, 10000)
     end
 
     # Excecute commands within an iframe, then switch back to the parent frame
