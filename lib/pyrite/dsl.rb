@@ -38,7 +38,7 @@ module Pyrite
 
     # Press a button based on its text
     def press(text)
-      browser.click("css=input[type=submit][value='#{text}']")      
+      browser.click("css=input[type=submit][value='#{text}']")
     end
 
     # Check a chek box or toggle a radio button
@@ -66,7 +66,7 @@ module Pyrite
     end
 
     # Wait for a frame with a give ID to finish loading
-    def wait_for_frame(frame) 
+    def wait_for_frame(frame)
       browser.wait_for_frame_to_load(frame, 5000)
     end
 
@@ -76,9 +76,10 @@ module Pyrite
     #      click "Submit"
     #    end
     def inside_iframe(frame)
-      wait_for frame
+      # massive hack but the only way to reliably wait
+      # for the frame
+      sleep 2
       browser.select_frame(frame)
-      wait_for_frame frame
       yield
       browser.select_frame("relative=parent")
     end
@@ -87,12 +88,12 @@ module Pyrite
     # i.e.
     #    follow 'delete'
     #    get_confirmation
-    #    !assert_element "h2:contains('user1')"
+    #    assert_no_element "h2:contains('user1')"
     def get_confirmation
       browser.get_confirmation
     end
 
-    # drag an css selector to the center pixel of another, e.g. 
+    # drag an css selector to the center pixel of another, e.g.
     #    `drag_and_drop(:from => "li#element_#{my_oject.id}", :to => "div#trash")
     # ProTip: if you have a list of elements you wish to re-order, drag the top element down.
     def drag_and_drop(opts={})
@@ -106,7 +107,7 @@ module Pyrite
       browser.capture_entire_page_screenshot(image, '')
       puts `open #{image}`
     end
-    
+
     # Write the HTML of a page to a file and open it.
     # (probably only works on OS X)
     def code_me
