@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'selenium-client', '~> 1.2.18'
   s.add_runtime_dependency 'selenium_remote_control', '~> 1.0.3'
-  s.add_runtime_dependency 'database_cleaner', '~> 0.5.0'
+  s.add_runtime_dependency 'database_cleaner', '~> 0.5.2'
 end
