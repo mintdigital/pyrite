@@ -9,7 +9,7 @@ namespace :pyrite do
 
   desc "Startup Selenium RC and the server for browser testing"
   task :start => 'selenium:start' do
-    puts `./script/server -e pyrite -p 2222 -d`
+    puts `script/server -p 2222 -e pyrite -d`
   end
 
   desc "Shutdown Selenium RC and the server for browser testing"
