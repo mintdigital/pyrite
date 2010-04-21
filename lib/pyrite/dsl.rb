@@ -53,7 +53,7 @@ module Pyrite
 
     # Pick an option from a select element
     def select(element, option)
-      browser.select(element, option)
+      browser.select("css=#{element}", option)
     end
 
     # Wait for a specific element or the page to load
