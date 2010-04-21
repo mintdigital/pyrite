@@ -6,7 +6,7 @@ module Pyrite
       if element.match /date/ # Try to guess at date selects
         select_date(element, value)
       else
-        browser.type(element, value)
+        browser.type("css=#{element}", value)
       end
     end
 
@@ -20,9 +20,9 @@ module Pyrite
         :minute => '5i'
       }
       date = value.respond_to?(:year) ? value : Date.parse(value)
-      browser.select "#{element}_#{suffixes[:year]}", date.year
-      browser.select "#{element}_#{suffixes[:month]}", date.strftime('%B')
-      browser.select "#{element}_#{suffixes[:day]}", date.day
+      browser.select "css=#{element}_#{suffixes[:year]}", date.year
+      browser.select "css=#{element}_#{suffixes[:month]}", date.strftime('%B')
+      browser.select "css=#{element}_#{suffixes[:day]}", date.day
     end
 
     # Open a URL
