@@ -6,9 +6,6 @@ DatabaseCleaner.strategy = :truncation
 require 'pyrite/pyrite_test'
 
 module Pyrite
-  # The port on which the test server will be booted
-  mattr_accessor :server_port
-  @@server_port = 2222
 
   # The ip address the RC is running on
   mattr_accessor :rc_host
@@ -17,6 +14,10 @@ module Pyrite
   # The url on which the test server will be booted
   mattr_accessor :sever_url
   @@sever_url = ENV['SERVER_URL'] || 'http://0.0.0.0'
+
+  # The port on which the test server will be booted
+  mattr_accessor :server_port
+  @@server_port = ENV['SERVER_PORT'] || 2222
 
   # The browser that selenium will drive
   mattr_accessor :browser
