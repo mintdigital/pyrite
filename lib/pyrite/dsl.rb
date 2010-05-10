@@ -36,9 +36,9 @@ module Pyrite
       browser.click("link=#{text}")
     end
 
-    # Press a button based on its text
+    # Press an submit (not button) input based on its text
     def press(text)
-      browser.click("css=input[type=submit][value='#{text}'], button[type=submit][value='#{text}']")
+      browser.click("css=input[type=submit][value='#{text}']")
     end
 
     # Check a chek box or toggle a radio button
