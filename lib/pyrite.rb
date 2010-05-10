@@ -6,6 +6,13 @@ DatabaseCleaner.strategy = :truncation
 require 'pyrite/pyrite_test'
 
 module Pyrite
+  # set the default JS framework for the AUT
+  # e.g `Pyrite.js_framework = :jquery`
+  # can be set in pyrite_helper.rb
+  # Makes `wait_for :ajax` use the correct JS lib.
+  # Defaults to jQuery.
+  mattr_accessor :js_framework
+  @@js_framework = :jquery
 
   # The ip address the RC is running on
   mattr_accessor :rc_host

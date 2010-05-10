@@ -56,12 +56,16 @@ module Pyrite
       browser.select("css=#{element}", option)
     end
 
-    # Wait for a specific element or the page to load
+    # Wait for a specific element, the page to load
+    # or an AJAX request to return
     def wait_for(element)
-      if element == :page_load
-        browser.wait_for_page_to_load :page
-      else
-        browser.wait_for :element => "#{element}"
+      case element
+        when :page_load
+          browser.wait_for_page_to_load :page
+        when :ajax
+          browser.wait_for(:wait_for => :ajax, :javascript_framework => Pyrite.js_framework)
+        else
+          browser.wait_for :element => "css=#{element}"
       end
     end
 
