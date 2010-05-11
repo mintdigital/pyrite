@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Pyrite::Dsl</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Pyrite::Dsl</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/pyrite/dsl_rb.html">
+                lib/pyrite/dsl.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000007">check</a>&nbsp;&nbsp;
+      <a href="#M000008">click</a>&nbsp;&nbsp;
+      <a href="#M000016">code_me</a>&nbsp;&nbsp;
+      <a href="#M000014">drag_and_drop</a>&nbsp;&nbsp;
+      <a href="#M000002">fill_in</a>&nbsp;&nbsp;
+      <a href="#M000005">follow</a>&nbsp;&nbsp;
+      <a href="#M000013">get_confirmation</a>&nbsp;&nbsp;
+      <a href="#M000012">inside_iframe</a>&nbsp;&nbsp;
+      <a href="#M000006">press</a>&nbsp;&nbsp;
+      <a href="#M000009">select</a>&nbsp;&nbsp;
+      <a href="#M000003">select_date</a>&nbsp;&nbsp;
+      <a href="#M000015">show_me</a>&nbsp;&nbsp;
+      <a href="#M000004">visit</a>&nbsp;&nbsp;
+      <a href="#M000010">wait_for</a>&nbsp;&nbsp;
+      <a href="#M000011">wait_for_frame</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000007.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000007.html');return false;">
+          <span class="method-name">check</span><span class="method-args">(locator)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Check a chek box or toggle a radio button
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000008.html');return false;">
+          <span class="method-name">click</span><span class="method-args">(locator)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Click anything else
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000016.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000016.html');return false;">
+          <span class="method-name">code_me</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Write the HTML of a page to a file and open it. (probably only works on OS
+X)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000014.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000014.html');return false;">
+          <span class="method-name">drag_and_drop</span><span class="method-args">(opts={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+drag an css selector to the center pixel of another, e.g.
+</p>
+<pre>
+   `drag_and_drop(:from =&gt; &quot;li#element_#{my_oject.id}&quot;, :to =&gt; &quot;div#trash&quot;)
+</pre>
+<p>
+ProTip: if you have a list of elements you wish to re-order, drag the top
+element down.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000002.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000002.html');return false;">
+          <span class="method-name">fill_in</span><span class="method-args">(element, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Fill in a form field
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000005.html');return false;">
+          <span class="method-name">follow</span><span class="method-args">(text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Follow a link based on its text
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000013.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000013.html');return false;">
+          <span class="method-name">get_confirmation</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Use this to consume JS alerts i.e.
+</p>
+<pre>
+   follow 'delete'
+   get_confirmation
+   assert_no_element &quot;h2:contains('user1')&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000012.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000012.html');return false;">
+          <span class="method-name">inside_iframe</span><span class="method-args">(frame) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Excecute commands within an iframe, then switch back to the parent frame
+i.e.
+</p>
+<pre>
+   inside_frame(iframe) do
+     click &quot;Submit&quot;
+   end
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000006.html');return false;">
+          <span class="method-name">press</span><span class="method-args">(text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Press an submit (not button) input based on its text
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000009.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000009.html');return false;">
+          <span class="method-name">select</span><span class="method-args">(element, option)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Pick an option from a <a href="Dsl.html#M000009">select</a> element
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000003.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000003.html');return false;">
+          <span class="method-name">select_date</span><span class="method-args">(element, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Fill in a Rails-ish set of date_select fields
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000015.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000015.html');return false;">
+          <span class="method-name">show_me</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Capture the page and try to open it (probably only works on OS X)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000004.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000004.html');return false;">
+          <span class="method-name">visit</span><span class="method-args">(path)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Open a URL
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000010.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000010.html');return false;">
+          <span class="method-name">wait_for</span><span class="method-args">(element)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait for a specific element, the page to load or an AJAX request to return
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="Dsl.src/M000011.html" target="Code" class="method-signature"
+            onclick="popupCode('Dsl.src/M000011.html');return false;">
+          <span class="method-name">wait_for_frame</span><span class="method-args">(frame)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait for a frame with a give ID to finish loading
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

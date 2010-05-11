@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>select_date (Pyrite::Dsl)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/pyrite/dsl.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select_date</span>(<span class="ruby-identifier">element</span>, <span class="ruby-identifier">value</span>)
+      <span class="ruby-identifier">suffixes</span> = {
+        <span class="ruby-identifier">:year</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'1i'</span>,
+        <span class="ruby-identifier">:month</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'2i'</span>,
+        <span class="ruby-identifier">:day</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'3i'</span>,
+        <span class="ruby-identifier">:hour</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'4i'</span>,
+        <span class="ruby-identifier">:minute</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'5i'</span>
+      }
+      <span class="ruby-identifier">date</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:year</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">select</span> <span class="ruby-node">&quot;css=#{element}_#{suffixes[:year]}&quot;</span>, <span class="ruby-identifier">date</span>.<span class="ruby-identifier">year</span>
+      <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">select</span> <span class="ruby-node">&quot;css=#{element}_#{suffixes[:month]}&quot;</span>, <span class="ruby-identifier">date</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-value str">'%B'</span>)
+      <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">select</span> <span class="ruby-node">&quot;css=#{element}_#{suffixes[:day]}&quot;</span>, <span class="ruby-identifier">date</span>.<span class="ruby-identifier">day</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>
