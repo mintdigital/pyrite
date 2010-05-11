@@ -1,3 +1,4 @@
 html/*
 *.gem
 pyrite-*.gem
+_site
