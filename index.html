@@ -5,37 +5,37 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	<title>mintdigital/pyrite @ GitHub</title>
+	<title>Pyrite - Easy peasy in-browser testing with Selenium</title>
 
-	<style type="text/css">
-		body {
-  		background-color: #fff;
-		  font-family: "Gill Sans",Arial,tahoma,sans-serif;
-  		color: #565656;
-  		line-height:1.07;
-  		border-top:4px solid #106275;
-  		margin:0;
+  <style type="text/css">
+  body {
+      background-color: #fff;
+      font-family: "Gill Sans",Arial,tahoma,sans-serif;
+      color: #565656;
+      line-height:1.07;
+      border-top:4px solid #106275;
+      margin:0;
     }
     #container {
       margin: 0 auto;
       width: 700px;
     }
-		h1 { font-size: 3.8em; color: #565656; margin-bottom: 3px; font-weight:normal; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none; color:#565656; }
-		h1 a:hover { text-decoration:none; }
-		h2 { font-size: 2em; color: #565656; font-weight:normal; }
+    h1 { font-size: 3.8em; color: #565656; margin-bottom: 3px; font-weight:normal; }
+    h1 .small { font-size: 0.4em; }
+    h1 a { text-decoration: none; color:#565656; }
+    h1 a:hover { text-decoration:none; }
+    h2 { font-size: 2em; color: #565656; font-weight:normal; }
     h3 { color: #565656; font-weight:normal; }
     a { color: #106275; text-decoration:none; }
     a:hover { text-decoration:underline;}
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
+    pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding:30px 0; font-style: italic; }
     .mintdigital { color:#565656; text-transform:uppercase;}
     .mintdigital span { color:#106275; }
-	</style>
+  </style>
 
 </head>
 
@@ -52,21 +52,21 @@
       <p>Easy peasy in-browser testing with Selenium</p>
     </div>
 
-		<h2>Description</h2>
+    <h2>Description</h2>
 
-		<p>Pyrite is a lightweight DSL around the Selenium browser testing framework.</p>
+    <p>Pyrite is a lightweight DSL around the Selenium browser testing framework.</p>
 
-		<p>We found Cucumber to be awesome, but no one was reading the features. We found Webrat to be fantastic, but way too complex for what we wanted. So, we made Pyrite - a few selenium-client methods wrapped up in a readable way.</p>
+    <p>We found <a href="http://wiki.github.com/aslakhellesoy/cucumber/">Cucumber</a> to be awesome, but no one was reading the features. We found <a href="http://wiki.github.com/brynary/webrat/">Webrat</a> to be fantastic, but way too complex for what we wanted. So, we made Pyrite - a few <a href="http://selenium-client.rubyforge.org/">selenium-client</a> methods wrapped up in a readable way.</p>
 
     <h2>Install</h2>
     <p>Using bundler:
       <pre>gem 'pyrite', :require => false</pre>
-			Installing as a Rails plugin should also work:
-			  <pre>script/plugin install git://github.com/mintdigital/pyrite.git</pre>
+      Installing as a Rails plugin should also work:
+      <pre>script/plugin install git://github.com/mintdigital/pyrite.git</pre>
     </p>
 
-		<h2>Example</h2>
-		<p>Pyrite tests are just like regular Rails tests, but with a nice DSL:</p>
+    <h2>Example</h2>
+    <p>Pyrite tests are just like regular Rails tests, but with a nice DSL:</p>
 <pre>
 require 'pyrite_helper'
 
@@ -80,18 +80,24 @@ class BasicTest < Pyrite::PyriteTest
 end
 </pre>
 
-			<h2>Run the tests</h2>
-			<p>Pyrite has rake tasks to manage setting up the required servers and run your tests:</p>
-				<pre>rake pyrite:all</pre>
+      <h2>Run the tests</h2>
+      <p>Pyrite has rake tasks to manage setting up the required servers and run your tests:</p>
+      <pre>rake pyrite:start</pre>
+      <pre>rake pyrite:run</pre>
+      <pre>rake pyrite:stop</pre>
+
+      These can be run sequentially with:
+
+      <pre>rake pyrite:all</pre>
 
       <h2>Documentation</h2>
-      <p>Check the <a href="/pyrite/doc/index.html">RDoc</a> for more information.</a>
+      <p>Check the <a href="/pyrite/doc/index.html">RDoc</a> and the <a href="https://github.com/mintdigital/pyrite/wikis">wiki</a> for more information.</a>
 
-			<h2>License</h2>
+      <h2>License</h2>
 
       <p>Copyright © 2010 Mint Digital Ltd.</p>
 
-			<p>Released under the terms of the MIT License. See the <a href="https://github.com/mintdigital/pyrite/blob/master/MIT-LICENSE">MIT-LICENSE</a> file</p>
+      <p>Released under the terms of the MIT License. See the <a href="https://github.com/mintdigital/pyrite/blob/master/MIT-LICENSE">MIT-LICENSE</a> file</p>
 
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/mintdigital/pyrite">mintdigital/pyrite</a>
