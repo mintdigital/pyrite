@@ -8,7 +8,6 @@ namespace :selenium do
     rc.background = true
     rc.wait_until_up_and_running = true
     rc.log_to = 'log/selenium_rc.log'
-    rc.additional_args << "-singleWindow"
     rc.jar_file = SeleniumRC.jar_file
   end
 
