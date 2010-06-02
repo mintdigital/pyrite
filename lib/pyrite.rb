@@ -32,5 +32,5 @@ module Pyrite
 
   # The timeout for Selenium::Client
   mattr_accessor :timeout
-  @@timeout = 60
+  @@timeout = 120
 end
