@@ -65,7 +65,7 @@ module Pyrite
         when :ajax
           browser.wait_for(:wait_for => :ajax, :javascript_framework => Pyrite.js_framework)
         else
-          browser.wait_for :element => "css=#{element}"
+          browser.wait_for(:element => "css=#{element}")
       end
     end
 
