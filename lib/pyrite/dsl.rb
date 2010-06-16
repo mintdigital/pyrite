@@ -61,7 +61,7 @@ module Pyrite
     def wait_for(element)
       case element
         when :page_load
-          browser.wait_for_page_to_load :page
+          browser.wait_for :wait_for => :page
         when :ajax
           browser.wait_for(:wait_for => :ajax, :javascript_framework => Pyrite.js_framework)
         else
