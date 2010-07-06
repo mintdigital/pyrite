@@ -17,7 +17,7 @@ title: Pyrite, Nginx and Hudson
   <h2>Configuring Nginx</h2>
     <p>Here is our Nginx file (with a few things redacted for security ;)</p>
 
-    {% highlight apache %}
+    <pre>
       # Hudson
 
       upstream hudson {
@@ -40,7 +40,7 @@ title: Pyrite, Nginx and Hudson
               proxy_pass http://hudson;
            }
       }
-    {% endhighlight %}
+    </pre>
 
     <p>If you, like us, have an Ubuntu box functioning as your CI server, whack the above in `/etc/nginx/sites-available/default`.</p>
 
