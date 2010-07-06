@@ -14,7 +14,7 @@ title: The Pyrite Blog
         <p class="year">{{ post.date | date: "%Y" }}</p>
       </div>
       <div id="title">
-        <h2><a href="/pyrite/{{ post.url }}">{{ post.title }}</a></h2>
+        <h2><a href="/pyrite{{ post.url }}">{{ post.title }}</a></h2>
       </div>
     </li>
   {% endfor %}
