@@ -34,8 +34,9 @@ body {
 #date {
 	width: 50px;
 	padding: 10px;
-	float: right;
-	display: block;
+	clear: both;
+	float: left;
+	padding-right:20px;
 }
 
 p.month {
@@ -45,18 +46,6 @@ p.month {
 p.year {
 	font-size: 10px;
 	margin-top: -16px;
-}
-
-div.date {
-  clear: both;
-  float: left;
-  padding-right:20px;
-}
-p.day {
-  margin:0 0 -20px 0;
-}
-div#blog_index {
-  margin-bottom:20px
 }
 
 h1 { font-size: 3.8em; color: #565656; margin-bottom: 3px; font-weight:normal; }
