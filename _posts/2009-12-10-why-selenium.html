@@ -1,0 +1,26 @@
+---
+layout: pyrite
+title: What is Pyrite?
+---
+
+<div id="post">
+  <h1>{{ page.title }}</h1>
+
+  <p><a href="http://github.com/mintdigital/pyrite">Pyrite</a> is an open-source in-browser testing tool by the fine folks at <a href="http://mintdigital.com">Mint Digital</a>. It wraps the <a href="http://rubygems.org">Ruby Gem</a> <a href="http://selenium-client.rubyforge.org/">selenium-client</a> to create a nice DSL for incorporating <a href="http://seleniumhq.org/">Selenium</a> into your <a href="http://rubyonrails.org/">Ruby on Rails</a> test suit.</p>
+
+  <h2>But wait... If selenium-client exists, why bother with Pyrite?</h2>
+
+  <p>Pyrite configures selenium-client and provides a simple way of running your tests. Out of the box, Selenium is configured to run your tests in the Firefox web browser (which you'll need to have installed) locally. Digging deeper, Pyrite offers an easy way to configure remote instances of Selenium to make cross-browser testing easy, or to allow you to use cloud-based services such as <a href="http://saucelabs.com/">Sauce On-Demand</a><p>
+
+  <p>Pyrite's DSL bundles up some of the common tasks you frequently have to do in order to carry out a test. Stuff like following a link, pressing a button or filling out a form field are boiled down to the simple commands `follow`, `press` and `fill_in`.</p>
+
+  <p>This simple DSL extends to a certain way of thinking with regard to writing your tests. We choose CSS selectors over Xpath for example. The DSL is also very limited. This is intentional, as we have found that in most cases you really want to be clicking visible elements and asserting the correct response. If however you are sure you want to use some of the deeper functions of Selenium not provided by the DSL, Pyrite makes it easy to 'drop-down' a level and mess with Selenium directly.</p>
+
+  <h2>But what about Cucumber, Webrat, Capybarra and the rest?</h2>
+
+  <p>There is absolutly no doubt that these tools are great. In fact, Pyrite takes plenty of cues from the <a href="http://github.com/brynary/webrat">Webrat</a>. What pyrite tries to avoid is complicating the issue. There are no 'human-readable' features to parse, just regular tests written by devs and for devs. There are no adapters for other testing-engines, we wrap around Selenium because we believe it is the best tool for the job.</p>
+
+  <h2>Cool, so what's the best way to get started?</h2>
+
+  <p>Check the <a href="https://github.com/mintdigital/pyrite/wikis">Wiki</a> and have fun!</a>
+</div>

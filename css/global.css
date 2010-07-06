@@ -19,6 +19,40 @@ body {
 	display: block;
 }
 
+#post h1 {
+	margin-top: 80px;
+}
+
+#blog_index ul, li{
+	list-style-type: none;
+}
+p.day {
+	font-size: 20px;
+	margin-bottom: -20px;
+}
+
+
+#title {
+	margin-left : 30px;
+}
+
+#date {
+	width: 50px;
+	padding: 10px;
+	float: right;
+	display: block;
+}
+
+p.month {
+	font-size: 18px;
+}
+
+p.year {
+	font-size: 10px;
+	margin-top: -16px;
+}
+
+
 h1 { font-size: 3.8em; color: #565656; margin-bottom: 3px; font-weight:normal; }
 h1 .small { font-size: 0.4em; }
 h1 a { text-decoration: none; color:#565656; }

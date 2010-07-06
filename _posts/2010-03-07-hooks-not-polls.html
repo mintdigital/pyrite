@@ -1,0 +1,49 @@
+---
+layout: pyrite
+title: Pyrite, Nginx and Hudson
+---
+
+<div id="post">
+  <h1>{{ page.title }}</h1>
+
+  <p>In order to ensure our Pyrite tests run regularly, we've hooked up <a href="http://hudson-ci.org/">Hudson</a> as our CI server. Hudson is real easy to set up, especially when fronted by <a href="http://wiki.nginx.org/Main">Nginx</a>, but I've noticed a lot of folks are not using what I consider to be Hudson's killer feature - automatic builds.
+
+  <h2>Build tokens</h2>
+    <p>Hudson allows you to set a <a href="http://wiki.hudson-ci.org/display/HUDSON/Building+a+software+project">build token</a> to trigger a job. This basically means that, when a given URL is hit, the build is triggered. When combined with <a href="http://help.github.com/post-receive-hooks/">Github's Post-Recive URL</a> feature, every time someone commits to the project repo, a build gets triggered.</p>
+
+  <h2>A hole in our armour</h2>
+    <p>In order to keep our super-secret projects, err... super-secret, we've hidden Hudson behind <a href="http://wiki.nginx.org/NginxHttpAuthBasicModule">Nginx's auth-basic module</a>. This is cool, but it does present a problem - the build url is also behind the auth-basic protection. The smart kids among you (which is all of you, right?) will have noticed that the auth-basic module can be turned off for a location. The exact location can also be determined by a regex. There for we can allow requests to the build token for our projects and have Github trigger builds whenever someone commits.
+
+  <h2>Configuring Nginx</h2>
+    <p>Here is our Nginx file (with a few things redacted for security ;)</p>
+
+    {% highlight ApacheConf %}
+      # Hudson
+
+      upstream hudson {
+          server 127.0.0.1:8080;
+      }
+
+      server {
+          server_name  your-ci-server.com;
+
+          root /var/lib/hudson;
+
+          location / {
+              proxy_pass http://hudson;
+              auth_basic "Hudson CI";
+              auth_basic_user_file /var/opt/hudson/htpasswd;
+          }
+
+          location ~ /job/(.*)/build {
+              auth_basic off;
+              proxy_pass http://hudson;
+           }
+      }
+    {% endhighlight %}
+
+    <p>If you, like us, have an Ubuntu box functioning as your CI server, whack the above in `/etc/nginx/sites-available/default`.</p>
+
+    <p>All that is left to do is to tell Github the URL to hit, and away you go.</p>
+
+</div>
