@@ -23,15 +23,17 @@ body {
 	margin-top: 80px;
 }
 
-#blog_index ul, li{
+ol li{
+	clear: both;
 	list-style-type: none;
 }
 
-#title {
+.title h2 {
+	padding-top: 18px;
 	margin-left : 30px;
 }
 
-#date {
+.date {
 	width: 50px;
 	padding: 10px;
 	clear: both;
@@ -39,13 +41,21 @@ body {
 	padding-right:20px;
 }
 
+.date p {
+	text-align: center;
+	margin: 0;
+}
+
+p.day {
+	font-size: 24px;
+}
+
 p.month {
-	font-size: 18px;
+	font-size: 12px;
 }
 
 p.year {
-	font-size: 10px;
-	margin-top: -16px;
+	font-size: 8px;
 }
 
 h1 { font-size: 3.8em; color: #565656; margin-bottom: 3px; font-weight:normal; }
