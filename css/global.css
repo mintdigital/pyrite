@@ -41,7 +41,7 @@ ol li{
 	padding-right:20px;
 }
 
-ol #blog_index {
+ol#blog_index {
 	padding: 0;
 }
 
