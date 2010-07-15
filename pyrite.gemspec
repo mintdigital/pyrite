@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.version = "0.6.1"
+  s.version = "0.6.2"
 
   s.name = 'pyrite'
   s.summary = 'Easy peasy browser testing'
@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency 'selenium-client', '~> 1.2.18'
-  s.add_runtime_dependency 'selenium_remote_control', '~> 1.0.3'
+  s.add_runtime_dependency 'selenium_remote_control', '~> 1.0.4'
   s.add_runtime_dependency 'database_cleaner', '~> 0.5.2'
 end
