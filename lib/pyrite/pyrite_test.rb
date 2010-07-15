@@ -25,6 +25,29 @@ module Pyrite
       browser.start_new_browser_session
       browser.get_eval "window.moveTo(1,0)"
       browser.window_maximize
+      browser.add_location_strategy("jquery",
+                  "var loc = locator; " +
+                  "var attr = null; " +
+                  "var isattr = false; " +
+                  "var inx = locator.lastIndexOf('@'); " +
+
+                  "if (inx != -1){ " +
+                  "   loc = locator.substring(0, inx); " +
+                  "   attr = locator.substring(inx + 1); " +
+                  "   isattr = true; " +
+                  "} " +
+
+                  "var found = jQuery(inDocument).find(loc); " +
+                  "if (found.length >= 1) { " +
+                  "   if (isattr) { " +
+                  "       return found[0].getAttribute(attr); " +
+                  "   } else { " +
+                  "       return found[0]; " +
+                  "   } " +
+                  "} else { " +
+                  "   return null; " +
+                  "}"
+              )
       super
     end
 
