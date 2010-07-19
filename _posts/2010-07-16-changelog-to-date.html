@@ -1,0 +1,40 @@
+---
+layout: pyrite
+title: Changelog to date 
+---
+
+<h1>Changelog to date</h1>
+
+<p>Pyrite is under constant development. Everytime <a href="http://www.mintdigital.com/people">we</a> encounter a new problem - be it Selenium being mental, emulating certain actions a user might do or finding the proces of rining the tests too hard - we try our best to fix it. Here, in a nutshell, is the progress of Pyrite from it's inception as a gem (v0.5.0) to it's current jQuery-enabled state (v0.6.4, or 'The Bad Boy' as I like to call it).
+
+<h2>0.5.0</h2>
+<ul>
+  <li>Gemify the plugin (morphed from scripts) into something not totally shamefull</li>
+</ul>
+
+<h2>0.5.1</h2>
+<ul>
+  <li>Have a re-think about how we start the server, use a better stratergy in determining what to `wait_for`</li>
+</ul>
+
+<tt>tags missing...</tt>
+
+<h2>0.5.5</h2>
+<ul>
+  <li>The CSS commit - we took the decision that Pyrite should do all it's element locating via CSS. We have a strong front-end team and a pretty handy back-end team too. And no one likes XPath.</li>
+</ul>
+
+<h2>0.5.6</h2>
+<ul>
+  <li>Add `wait_for :javascript` - This commit allowed us to tell Pyrite which JS frame work we were using (Selenium only supports jQuery or Prototype), which meant we could properly wait for ajax calls to return (no mre `sleep 2`).</li>
+</ul>
+
+<h2>0.5.7 & 0.5.8</h2>
+<ul>
+  <li>rather not talk about this - some shinanigans involving Sphinx search and a few trouble-shooting commits to combat some timeouts we were seeing on CI</li>
+</ul>
+
+<h2>0.5.9</h2>
+<ul>
+  <li>Our first user-submitted bug! Thanks to <a href="http://github.com/chrismcc">chrismcc</a> for pointing out we had made an error in the `wait_for` syntax</li>
+</ul>
