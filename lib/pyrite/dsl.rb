@@ -6,7 +6,7 @@ module Pyrite
       if element.match /date/ # Try to guess at date selects
         select_date(element, value)
       else
-        browser.type("css=#{element}", value)
+        browser.type("jquery=#{element}", value)
       end
     end
 
@@ -20,9 +20,9 @@ module Pyrite
         :minute => '5i'
       }
       date = value.respond_to?(:year) ? value : Date.parse(value)
-      browser.select "css=#{element}_#{suffixes[:year]}", date.year
-      browser.select "css=#{element}_#{suffixes[:month]}", date.strftime('%B')
-      browser.select "css=#{element}_#{suffixes[:day]}", date.day
+      browser.select "jquery=#{element}_#{suffixes[:year]}", date.year
+      browser.select "jquery=#{element}_#{suffixes[:month]}", date.strftime('%B')
+      browser.select "jquery=#{element}_#{suffixes[:day]}", date.day
     end
 
     # Open a URL
@@ -38,22 +38,22 @@ module Pyrite
 
     # Press an submit (not button) input based on its text
     def press(text)
-      browser.click("css=input[type=submit][value='#{text}']")
+      browser.click("jquery=input[type=submit][value='#{text}']")
     end
 
     # Check a chek box or toggle a radio button
     def check(locator)
-      browser.check("css=#{locator}")
+      browser.check("jquery=#{locator}")
     end
 
     # Click anything else
     def click(locator)
-      browser.click("css=#{locator}")
+      browser.click("jquery=#{locator}")
     end
 
     # Pick an option from a select element
     def select(element, option)
-      browser.select("css=#{element}", option)
+      browser.select("jquery=#{element}", option)
     end
 
     # Wait for a specific element, the page to load
@@ -65,7 +65,7 @@ module Pyrite
         when :ajax
           browser.wait_for(:wait_for => :ajax, :javascript_framework => Pyrite.js_framework)
         else
-          browser.wait_for(:element => "css=#{element}")
+          browser.wait_for(:element => "jquery=#{element}")
       end
     end
 
@@ -97,11 +97,11 @@ module Pyrite
       browser.get_confirmation
     end
 
-    # drag an css selector to the center pixel of another, e.g.
+    # drag an jquery selector to the center pixel of another, e.g.
     #    `drag_and_drop(:from => "li#element_#{my_oject.id}", :to => "div#trash")
     # ProTip: if you have a list of elements you wish to re-order, drag the top element down.
     def drag_and_drop(opts={})
-      browser.drag_and_drop_to_object("css=#{opts[:from]}", "css=#{opts[:to]}")
+      browser.drag_and_drop_to_object("jquery=#{opts[:from]}", "jquery=#{opts[:to]}")
     end
 
     # Capture the page and try to open it
