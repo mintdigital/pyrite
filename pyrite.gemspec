@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.version = "0.6.2"
+  s.version = "0.6.3"
 
   s.name = 'pyrite'
   s.summary = 'Easy peasy browser testing'
