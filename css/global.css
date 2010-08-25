@@ -33,35 +33,6 @@ ol li{
 	margin-left : 30px;
 }
 
-.date {
-	width: 50px;
-	padding: 10px;
-	clear: both;
-	float: left;
-	padding-right:20px;
-}
-
-ol#blog_index {
-	padding: 0;
-}
-
-.date p {
-	text-align: center;
-	margin: 0;
-}
-
-p.day {
-	font-size: 24px;
-}
-
-p.month {
-	font-size: 12px;
-}
-
-p.year {
-	font-size: 8px;
-}
-
 h1 { font-size: 3.8em; color: #565656; margin-bottom: 3px; font-weight:normal; }
 h1 .small { font-size: 0.4em; }
 h1 a { text-decoration: none; color:#565656; }
