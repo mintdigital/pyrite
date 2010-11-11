@@ -15,7 +15,7 @@ module Pyrite
         :host => Pyrite.rc_host,
         :port => 4444,
         :browser => Pyrite.browser,
-        :url => "#{Pyrite.sever_url}:#{Pyrite.server_port}",
+        :url => "#{Pyrite.server_url}:#{Pyrite.server_port}",
         :timeout_in_second => Pyrite.timeout
       )
     end

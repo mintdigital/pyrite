@@ -19,8 +19,8 @@ module Pyrite
   @@rc_host = ENV['RC_HOST'] || '0.0.0.0'
 
   # The url on which the test server will be booted
-  mattr_accessor :sever_url
-  @@sever_url = ENV['SERVER_URL'] || 'http://0.0.0.0'
+  mattr_accessor :server_url
+  @@server_url = ENV['SERVER_URL'] || 'http://0.0.0.0'
 
   # The port on which the test server will be booted
   mattr_accessor :server_port
